@@ -5,7 +5,7 @@ metadata:
   labels:
     app: mongo
 spec: 
-  replicas: 7
+  replicas: 0
   selector:
     matchLabels:
       app: mongo
