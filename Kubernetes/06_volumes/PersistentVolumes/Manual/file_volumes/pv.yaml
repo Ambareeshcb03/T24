@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: manual-file-vol
+spec:
+  capacity:
+    storage: 1Ti
+  accessModes:
+    - ReadWriteMany
+  nfs:
+    path: /vol01
+    server: 10.104.214.42
+  persistentVolumeReclaimPolicy: Retain
+  claimRef:
+    namespace: default
+    name: manual-file-claim
