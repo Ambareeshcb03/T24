@@ -28,12 +28,19 @@ spec:
         volumeMounts:
         - name: mysql-config
           mountPath: /etc/mysql/conf.d/
-        - name: data-volume
+        - name: data-pvc
           mountPath: /var/lib/mysql
       volumes:
       - name: mysql-config
         configMap:
           name: mysql-config
-      - name: data-volume
-        persistentVolumeClaim:
-          claimName: data-pvc
+  volumeClaimTemplates:
+  - metadata:
+      name: data-pvc
+    spec:
+      resources:
+        requests:
+          storage: 5Gi
+      accessModes:
+        - ReadWriteOnce
+      storageClassName: gcp-storage-class
