@@ -1,0 +1,15 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: my-app-pdb
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: my-app
+
+
+# total 4 replicas
+# 1st pod - 1st node
+# 2nd and 3rd pods - 2nd node
+# 4th pod - 3rd node
