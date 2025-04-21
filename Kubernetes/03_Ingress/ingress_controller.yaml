@@ -1,5 +1,4 @@
 #https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.1/deploy/static/provider/cloud/deploy.yaml
-
 ---
 apiVersion: v1
 kind: Namespace
