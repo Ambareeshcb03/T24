@@ -11,7 +11,6 @@ terraform {
     storage_account_name = "nextopssat24"                      
     container_name       = "tfstate"                       
     key                  = "terraform.tfstate"
-    #access_key           = "1ESMNZs15OTApUqjzrRoW9seF6+Y2aysTeCqcyDKucIKBMiaZHruCrXF2S9O9VHXaR4WTkV6p2xV+ASt3Mk18A=="
   }
 }
 
