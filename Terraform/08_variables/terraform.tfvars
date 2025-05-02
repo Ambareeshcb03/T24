@@ -1,0 +1,10 @@
+rg_name             = "ManualRG"
+rg_location         = "eastus"
+vnet_name           = "ManualVNET01"
+vnet_addressspace   = ["10.10.0.0/16"]
+subnet1_name        = "Subnet01"
+subnet2_name        = "Subnet02"
+subnet3_name        = "Subnet03"
+nic_name            = "nextopsvm01-nic1"
+vm_name             = "nextopsvm01"
+vm_size             = "Standard_B1s"
