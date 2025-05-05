@@ -1,5 +1,5 @@
 module "prod" {
-    source = "../../aks"
+    source          = "../../aks"
     rg_name         = "ProdRG"
     rg_location     = "EastUS"
     acr_name        = "nextopsprodacr24"

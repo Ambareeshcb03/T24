@@ -5,13 +5,6 @@ terraform {
       version = "=4.27.0"
     }
   }
-
-  backend "azurerm" {
-    resource_group_name  = "NextOps"  
-    storage_account_name = "nextopssat23"                      
-    container_name       = "tfstate"                       
-    key                  = "TEST/test.tfstate"
-  }
 }
 
 provider "azurerm" {

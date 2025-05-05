@@ -1,5 +1,5 @@
 module "test" {
-    source = "../../aks"
+    source          = "../../aks"
     rg_name         = "TestRG"
     rg_location     = "EastUS"
     acr_name        = "nextopstestacr24"

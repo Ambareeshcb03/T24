@@ -9,8 +9,8 @@ terraform {
   backend "azurerm" {
     resource_group_name  = "NextOps"  
     storage_account_name = "nextopssat23"                      
-    container_name       = "tfstate"                       
-    key                  = "TEST/test.tfstate"
+    container_name       = "workspaces"                       
+    key                  = "terraform.tfstate"
   }
 }
 

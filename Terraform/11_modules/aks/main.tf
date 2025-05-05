@@ -43,6 +43,10 @@ resource "azurerm_kubernetes_cluster" "aks" {
   tags = {
     Environment = var.env
   }
+
+  lifecycle {
+    ignore_changes = [ default_node_pool ]
+  }
 }
 
 resource "azurerm_role_assignment" "aks2acr" {
