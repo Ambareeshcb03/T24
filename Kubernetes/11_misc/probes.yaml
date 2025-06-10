@@ -18,8 +18,16 @@ spec:
       - name: sample-app
         image: nginx:latest
         ports:
-        - containerPort: 80  
-        livenessProbe:
+        - containerPort: 80
+        startupProbe: # 1 checks whether started successfully
+          httpGet:
+              path: /
+              port: 80
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          timeoutSeconds: 2
+          failureThreshold: 30    
+        livenessProbe: # 2 alive and running
           httpGet:
             path: /
             port: 80
@@ -27,7 +35,7 @@ spec:
           periodSeconds: 60
           timeoutSeconds: 2
           failureThreshold: 3
-        readinessProbe:
+        readinessProbe: # 3 ready to serve traffic
           httpGet:
               path: /
               port: 80
@@ -36,11 +44,4 @@ spec:
           timeoutSeconds: 1
           failureThreshold: 3
           successThreshold: 1
-        startupProbe:
-          httpGet:
-              path: /
-              port: 80
-          initialDelaySeconds: 10
-          periodSeconds: 10
-          timeoutSeconds: 2
-          failureThreshold: 30  
+        

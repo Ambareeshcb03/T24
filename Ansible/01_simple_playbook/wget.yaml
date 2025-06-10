@@ -1,0 +1,13 @@
+- name: Install wget package 
+  hosts: clients 
+  remote_user: root 
+
+  tasks:
+  - name: Run apt-update
+    apt:
+      update-cache: true
+  
+  - name: install wget package 
+    apt: 
+      name: wget 
+      state: present

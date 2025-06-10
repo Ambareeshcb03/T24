@@ -1,0 +1,13 @@
+- name: Gathering facts
+  hosts: clients 
+  remote_user: root
+  gather_facts: yes 
+
+  tasks:
+  - name: Create a var to store gathered facts 
+    debug:
+      var: ansible_facts
+  
+  - name: Print all gathered facts from var 
+    debug:
+      msg: "{{ ansible_facts }}"

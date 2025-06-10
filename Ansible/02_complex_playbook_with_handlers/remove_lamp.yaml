@@ -1,0 +1,31 @@
+- name: Uninstall LAMP stack
+  hosts: clients 
+  remote_user: root 
+
+  tasks:  
+  - name: Stop apache2 service 
+    service:                          #module name
+      name: apache2                   #attibute list
+      state: stopped      
+  
+  - name: uninstall apache2
+    apt:                              #module name
+      name: apache2                   #attribute list
+      state: absent  
+
+  - name: Stop mysql service 
+    service:
+      name: mariadb 
+      state: stopped      
+  
+  - name: uninstall mysql community edition
+    apt:
+      name: mariadb-server 
+      state: absent 
+    
+  - name: uninstall PHP 
+    apt:
+      name:
+      - php 
+      - php-mysql 
+      state: absent 

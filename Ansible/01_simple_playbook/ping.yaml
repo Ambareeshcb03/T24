@@ -1,0 +1,7 @@
+- name: To check connectivity to remote machines
+  hosts: clients
+  remote_user: root 
+
+  tasks:
+  - name: check connectivity
+    ping:

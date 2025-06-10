@@ -22,7 +22,7 @@ spec:
       affinity:
         podAntiAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
-            - topologyKey: team
+            - topologyKey: kubernetes.io/hostname
               labelSelector:
                 matchExpressions:
                   - key: app 
