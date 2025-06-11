@@ -1,0 +1,27 @@
+- name: Install multiple utilities with loop
+  hosts: clients
+  remote_user: root 
+
+  vars:
+    pkgs_to_install:
+      - wget 
+      - curl 
+      - tree 
+      - vim
+    
+    services_list:
+      - sshd 
+      - cron
+
+  tasks:
+  - name: install wget
+    apt:
+      name: "{{ item }}"
+      state: present
+    with_items: "{{ pkgs_to_install }}"
+
+  - name: restart services 
+    service: 
+      name: "{{ item }}"
+      state: restarted 
+    with_items: "{{ services_list }}"
