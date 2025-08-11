@@ -1,0 +1,13 @@
+- name: Create user accounts with plain pw
+  hosts: clients
+  remote_user: root 
+  vars:
+    secret: P2ssw0rd@123
+
+  tasks:
+  - name: create user account on remote servers 
+    user:
+      name: haseduser1
+      password: "{{ secret | password_hash('sha512') }}"
+      shell: /bin/bash
+      state: present
